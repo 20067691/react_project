@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 import { getTopRatedMovie } from "../api/tmdb-api";
-import TopRatedMovieCard from "../components/topRatedMovieCard";
+import TopRatedMovieList from "../components/topRatedList";
 
 const HomePage = (props) => {
 
@@ -20,23 +20,20 @@ const HomePage = (props) => {
     return <h1>{error.message || topMovieError.message}</h1>
   }  
   const movies = data.results;
-  const topRatedMovie = topMovie.results[0];
-  console.log(topRatedMovie);
+  const topRatedMovies = topMovie?.results?.slice(0, 3) || [];
+  console.log(topRatedMovies);
 
   
 
   // Redundant, but necessary to avoid app crashing.
   const favorites = movies.filter(m => m.favorite)
-  localStorage.setItem('favorites', JSON.stringify(favorites))
-  const addToFavorites = (movieId) => true 
+  localStorage.setItem('favorites', JSON.stringify(favorites)) 
 
   return (
     <>
-    <TopRatedMovieCard topRatedMovie={topRatedMovie}
-      
-    />
     
-
+    <TopRatedMovieList movies={topRatedMovies} />
+      
     <PageTemplate
       title="Discover Movies"
       movies={movies}
