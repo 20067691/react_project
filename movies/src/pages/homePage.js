@@ -5,12 +5,15 @@ import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 import { getTopRatedMovie } from "../api/tmdb-api";
+
 import TopRatedMovieList from "../components/topRatedList";
 
 const HomePage = (props) => {
 
   const {  data, error, isLoading, isError }  = useQuery('discover', getMovies)
   const {  data: topMovie, error: topMovieError, isLoading: topMovieLoading, isError: topMovieIsError }  = useQuery('topRated', getTopRatedMovie)
+  
+  
 
   if (isLoading || topMovieLoading) {
     return <Spinner />
@@ -21,7 +24,9 @@ const HomePage = (props) => {
   }  
   const movies = data.results;
   const topRatedMovies = topMovie?.results?.slice(0, 3) || [];
+  
   console.log(topRatedMovies);
+  
 
   
 
@@ -31,7 +36,7 @@ const HomePage = (props) => {
 
   return (
     <>
-    
+  
     <TopRatedMovieList movies={topRatedMovies} />
       
     <PageTemplate
