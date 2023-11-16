@@ -4,8 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import CardActions from "@mui/material/CardActions";
 
-const ActorCard = ({ actor }) => {
+const ActorCard = ({ actor, action }) => {
     
     return (
         <Card>
@@ -18,10 +21,18 @@ const ActorCard = ({ actor }) => {
           />
           <CardContent>
             <Typography variant="h5" component="div">
-              {`Best known for: ${actor.known_for[0].title}`}
+              {`Best known for: ${actor.known_for[0].title || actor.known_for[0].name }`}
             </Typography>
             {/* You can add additional information about the actor here */}
           </CardContent>
+          <CardActions disableSpacing>
+        
+        <Link to={`/person/${actor.id}`}>
+          <Button variant="outlined" size="medium" color="primary">
+            More Info ...
+          </Button>
+        </Link>
+      </CardActions>
         </Card>
       );
         }
