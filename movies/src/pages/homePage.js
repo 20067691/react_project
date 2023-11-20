@@ -4,31 +4,29 @@ import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
-import { getTopRatedMovie } from "../api/tmdb-api";
+
 import { Pagination } from '@mui/material';
 
-import TopRatedMovieList from "../components/topRatedList";
+
 
 
 const HomePage = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const {  data, error, isLoading, isError, refetch }  = useQuery
   (['discover', { page: currentPage }], getMovies)
-  const {  data: topMovie, error: topMovieError, isLoading: topMovieLoading, isError: topMovieIsError }  = useQuery('topRated', getTopRatedMovie)
+  
   
   
 
-  if (isLoading || topMovieLoading) {
+  if (isLoading) {
     return <Spinner />
   }
 
-  if (isError || topMovieIsError) {
-    return <h1>{error.message || topMovieError.message}</h1>
+  if (isError) {
+    return <h1>{error.message }</h1>
   }  
   const movies = data.results;
-  const topRatedMovies = topMovie.results.slice(0, 3);
-  
-  console.log(topRatedMovies);
+
   
   const handlePageChange = (event, page) => {
     setCurrentPage(page);
@@ -46,8 +44,6 @@ const HomePage = (props) => {
   return (
     <>
 
-    <h1>Top Rated Movies</h1>
-    <TopRatedMovieList movies={topRatedMovies} />
       
     <PageTemplate
       title="Discover Movies"
