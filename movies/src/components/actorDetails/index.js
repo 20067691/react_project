@@ -3,8 +3,10 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import MovieListPageTemplate from "../templateMovieListPage";
 
 const ActorDetails = ({ actor }) => {
+  console.log(actor.movie_credits.cast)
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} md={4}>
@@ -28,6 +30,15 @@ const ActorDetails = ({ actor }) => {
           <Typography variant="body1">{actor.biography}</Typography>
         </Paper>
       </Grid>
+      <MovieListPageTemplate 
+      title={actor.name}
+      movies={actor.movie_credits.cast}
+      
+      action = {(movie) => {
+      return null
+    }
+        }
+      />
     </Grid>
   );
 };

@@ -9,6 +9,7 @@ import { Pagination } from '@mui/material';
 
 import TopRatedMovieList from "../components/topRatedList";
 
+
 const HomePage = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const {  data, error, isLoading, isError, refetch }  = useQuery
@@ -39,6 +40,8 @@ const HomePage = (props) => {
   // Redundant, but necessary to avoid app crashing.
   const favorites = movies.filter(m => m.favorite)
   localStorage.setItem('favorites', JSON.stringify(favorites)) 
+
+  console.log("search ids",getMovies)
 
   return (
     <>
