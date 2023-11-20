@@ -9,6 +9,8 @@ import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
+import MovieAvailability from "../movieAvailability";
+
 
 
 
@@ -24,6 +26,7 @@ const chip = { margin: 0.5 };
 
 const MovieDetails = ({ movie }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
+  console.log("new api call",movie.id)
 
   return (
     <>
@@ -73,6 +76,10 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper> 
+
+      <MovieAvailability movieId={movie.id} />
+
+
       <Fab
         color="secondary"
         variant="extended"
