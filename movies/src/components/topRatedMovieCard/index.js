@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import img from '../../images/film-poster-placeholder.png'
 
-const TopRatedMovieCard = ({ topRatedMovie }) => {
+const TopRatedMovieCard = ({ topRatedMovie, action }) => {
   return (
     <Card sx={{ display: 'flex', marginBottom: 2, marginLeft: 2, width: '100%' }}>
       {/* Box for the poster */}

@@ -23,6 +23,7 @@ const ActorDetailsPage = () => {
   }
 
   console.log("credits",actor)
+  
 
   return (
     <>

@@ -93,10 +93,12 @@ export const getMovie = (args) => {
 
   // New Additions 
 
-  export const getTopRatedMovie = () => {
+  export const getTopRatedMovie = (args) => {
+    const [, idPart] = args.queryKey;
+    const { page } = idPart;
 
     return fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&page=${page}`
     ).then( (response) => {
       if (!response.ok) {
         throw new Error(response.json().message);
