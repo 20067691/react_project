@@ -21,6 +21,9 @@ const ActorDetails = ({ actor }) => {
         <Typography variant="h6" gutterBottom>
           Place of Birth: {actor.place_of_birth}
         </Typography>
+        <Typography variant="h6" gutterBottom>
+          Occupation: {actor.known_for_department}
+        </Typography>
         <Paper elevation={3} style={{ padding: "10px", marginTop: "10px" }}>
           <Typography variant="body1">{actor.biography}</Typography>
         </Paper>

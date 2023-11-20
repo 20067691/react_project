@@ -20,7 +20,7 @@ const ActorCard = ({ actor, action }) => {
             subheader={`Popularity: ${actor.popularity}`}
           />
           <CardContent>
-            <Typography variant="h5" component="div">
+            <Typography variant="h6" component="div">
               {`Best known for: ${actor.known_for[0].title || actor.known_for[0].name }`}
             </Typography>
             {/* You can add additional information about the actor here */}
