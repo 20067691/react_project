@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes} from "react-router-dom";
 import HomePage from "./pages/homePage";
@@ -15,6 +15,9 @@ import WatchlistPage from "./pages/watchlistPage";
 import ActorDetailsPage from "./pages/actorDetailsPage";
 import PopularActorPage from "./pages/popularActorPage";
 import TopRatedPage from "./pages/topRatedMovies";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Switch } from "@mui/material"
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,11 +29,47 @@ const queryClient = new QueryClient({
   },
 });
 
+
+
 const App = () => {
+
+    // state to manage the dark mode
+    const [toggleDarkMode, setToggleDarkMode] = useState(true);
+
+    // function to toggle the dark mode as true or false
+    const toggleDarkTheme = () => {
+      setToggleDarkMode(!toggleDarkMode);
+    };
+  
+  
+    // // applying the primary and secondary theme colors
+    const darkTheme = createTheme({
+      palette: {
+        mode: toggleDarkMode ? 'dark' : 'light', // handle the dark mode state on toggle
+        primary: {
+          main: '#90caf9',
+        },
+        secondary: {
+          main: '#131052',
+  
+        },
+      },
+    });
+
   return (
+    <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
+
+
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <h2>Toggle Dark mode</h2>
+        <Switch checked={toggleDarkMode} onChange={toggleDarkTheme} />
+        
+
+        </div>
         <MoviesContextProvider>
         <Routes>
         <Route path="/movies/rated" element={<TopRatedPage />} />
@@ -49,6 +88,9 @@ const App = () => {
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
+
+
+     </ThemeProvider>
   );
 };
 
