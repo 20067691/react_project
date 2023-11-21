@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { getMovieAvailability } from '../../api/tmdb-api';
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
+import Spinner from '../spinner'
 
 const MovieAvailability = ({ movieId }) => {
   const { data: availabilityData, error, isLoading, isError } = useQuery(
@@ -13,7 +14,7 @@ const MovieAvailability = ({ movieId }) => {
 
   // Check if the data is still loading
   if (isLoading) {
-    return <p>Loading movie availability...</p>;
+    return <Spinner />;
   }
 
   // Check for errors in fetching the data
@@ -26,8 +27,8 @@ const MovieAvailability = ({ movieId }) => {
     return <p>No availability data found for this movie.</p>;
   }
 
-  // Accessing data for Ireland (you can change the country code as needed)
-  const irelandData = availabilityData.results.IE;
+    // Accessing data for Ireland (you can change the country code as needed)
+    const irelandData = availabilityData.results.IE;
 
   if (!irelandData) {
     return <p>No availability data found for Ireland.</p>;

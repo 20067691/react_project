@@ -17,7 +17,10 @@ import PopularActorPage from "./pages/popularActorPage";
 import TopRatedPage from "./pages/topRatedMovies";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Switch } from "@mui/material"
+import { Switch } from "@mui/material";
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormGroup from '@mui/material/FormGroup';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -65,9 +68,16 @@ const App = () => {
       <BrowserRouter>
         <SiteHeader />
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <h2>Toggle Dark mode</h2>
-        <Switch checked={toggleDarkMode} onChange={toggleDarkTheme} />
-        
+        <FormControl component="fieldset">
+        <FormGroup aria-label="position" row>
+        <FormControlLabel
+          value="end"
+          control= {<Switch checked={toggleDarkMode} onChange={toggleDarkTheme}/>}
+          label="Dark mode"
+          labelPlacement="end"
+        />
+        </FormGroup>
+        </FormControl>
 
         </div>
         <MoviesContextProvider>
