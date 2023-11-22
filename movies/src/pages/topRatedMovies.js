@@ -4,6 +4,7 @@ import Spinner from '../components/spinner';
 import { getTopRatedMovie } from '../api/tmdb-api';
 import TopRatedMovieList from '../components/topRatedList';
 import { Pagination } from '@mui/material';
+import ScrollToTopButton from '../components/backToTop';
 
 const TopRatedPage = (action) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,7 +22,7 @@ const TopRatedPage = (action) => {
     return <h1>{ratedError.message}</h1>;
   }
 
-  const topRatedMovies = ratedMovies.results;
+  const topRatedMovies = ratedMovies?.results;
   console.log(topRatedMovies)
 
   const handlePageChange = (event, page) => {
@@ -36,7 +37,9 @@ const TopRatedPage = (action) => {
       />
       <h1>Rated Movies</h1>
       <TopRatedMovieList movies={topRatedMovies} />
+      <ScrollToTopButton/>
     </div>
+    
   );
 };
 

@@ -43,6 +43,18 @@ const MovieAvailability = ({ movieId }) => {
       <a href={irelandData.link} target="_blank" rel="noopener noreferrer">
         Watch on TMDB
       </a>
+
+      <h3>Stream:</h3>
+      {irelandData?.flatrate?.map((s) => (
+        <Box key={s.provider_id} sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
+                <img
+        src={`https://image.tmdb.org/t/p/w200/${s.logo_path}`}
+        alt={s.provider_name}
+        style={{ width: 40, height: 40, marginRight: 8 }}
+      />
+          <Typography>{s.provider_name}</Typography>
+        </Box>
+      ))}
   
       <h3>Rent:</h3>
       {irelandData?.rent?.map((a) => (
@@ -59,7 +71,7 @@ const MovieAvailability = ({ movieId }) => {
       
     
       <h3>Buy:</h3>
-      {irelandData.buy.map((b) => (
+      {irelandData?.buy?.map((b) => (
       <Box key={b.provider_id} sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
       <img
         src={`https://image.tmdb.org/t/p/w200/${b.logo_path}`}

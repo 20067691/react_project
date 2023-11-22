@@ -4,7 +4,7 @@ import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
-
+import ScrollToTopButton from '../components/backToTop';
 import { Pagination } from '@mui/material';
 
 
@@ -59,7 +59,10 @@ const HomePage = (props) => {
     onChange={handlePageChange} 
     size={'large'}
       />
+
+      <ScrollToTopButton/>
     </>
+    
 );
 };
 export default HomePage;
