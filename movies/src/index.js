@@ -51,28 +51,31 @@ const App = () => {
         mode: toggleDarkMode ? 'dark' : 'light', // handle the dark mode state on toggle
         primary: {
           main: '#90caf9',
+          
         },
         secondary: {
-          main: '#131052',
+          main: '#5aafd1',
   
         },
+
       },
     });
 
   return (
     <ThemeProvider theme={darkTheme}>
     <CssBaseline />
+    
 
 
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'left', paddingLeft: 20 }}>
         <FormControl component="fieldset">
         <FormGroup aria-label="position" row>
         <FormControlLabel
           value="end"
-          control= {<Switch checked={toggleDarkMode} onChange={toggleDarkTheme}/>}
+          control= {<Switch checked={toggleDarkMode} onChange={toggleDarkTheme}  />}
           label="Dark mode"
           labelPlacement="end"
         />

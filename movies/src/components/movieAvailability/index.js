@@ -34,7 +34,7 @@ const MovieAvailability = ({ movieId }) => {
     return <p>No availability data found for Ireland.</p>;
   }
 
-  console.log(availabilityData)
+  console.log("ava",availabilityData)
   console.log(irelandData)
 
   return (
@@ -45,7 +45,7 @@ const MovieAvailability = ({ movieId }) => {
       </a>
   
       <h3>Rent:</h3>
-      {irelandData.rent.map((a) => (
+      {irelandData?.rent?.map((a) => (
         <Box key={a.provider_id} sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
                 <img
         src={`https://image.tmdb.org/t/p/w200/${a.logo_path}`}
