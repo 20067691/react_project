@@ -55,7 +55,7 @@ const HomePage = (props) => {
   return (
     <>
       <h1 style={{ marginLeft: '20px' }}>In Theatres: </h1>
-      <TopRatedMovieCard topRatedMovie={newMovie} />
+      <TopRatedMovieCard sx={{ padding: '20px' }} topRatedMovie={newMovie} />
     <PageTemplate
       title="Discover Movies"
       movies={movies}
@@ -63,7 +63,7 @@ const HomePage = (props) => {
         return <AddToFavoritesIcon movie={movie} />
       }}
     />
-    <Pagination style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }} 
+    <Pagination style={{ marginTop: '20px', marginBottom: '20px', display: 'flex', justifyContent: 'center' }} 
     count={10} 
     color = "secondary" 
     page={currentPage} 
