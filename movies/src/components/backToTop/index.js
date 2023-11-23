@@ -12,7 +12,7 @@ function ScrollToTopButton() {
     aria-label="Scroll to Top"
     style={{
       position: 'fixed',
-      bottom: '16px', 
+      bottom: '70px', 
       right: '16px', 
       padding: '8px', 
       backgroundColor: 'red', 

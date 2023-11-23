@@ -31,6 +31,8 @@ const HomePage = (props) => {
 
 
   const movies = data.results;
+  const check = releasedMovie.results;
+  console.log("check", check)
 
   // Randomly select an index between 0 and 19 (inclusive)
   const randomIndex = Math.floor(Math.random() * 20);
@@ -48,8 +50,7 @@ const HomePage = (props) => {
   const favorites = movies.filter(m => m.favorite)
   localStorage.setItem('favorites', JSON.stringify(favorites)) 
 
-  console.log("search ids",getMovies)
-  console.log("newM", getNowPlaying)
+
 
   return (
     <>

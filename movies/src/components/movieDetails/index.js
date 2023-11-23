@@ -10,6 +10,8 @@ import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
 import MovieAvailability from "../movieAvailability";
+import ScrollToTopButton from "../backToTop";
+import CastList from "../castList";
 
 
 
@@ -75,9 +77,15 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
             <Chip label={g.name} sx={{...chip}} />
           </li>
         ))}
+        
       </Paper> 
+      <Paper  component="ul" sx={{...root, marginBlock: 10}}  > <CastList castMembers={movie.credits.cast.slice(0,12)} /> </Paper>
 
       <MovieAvailability movieId={movie.id} />
+
+      
+      
+      <ScrollToTopButton/>
 
 
       <Fab

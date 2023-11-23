@@ -6,6 +6,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { getMovieImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
+import CastList from "../castList";
 
 const TemplateMoviePage = ({ movie, children }) => {
   const { data , error, isLoading, isError } = useQuery(
@@ -49,6 +50,7 @@ const TemplateMoviePage = ({ movie, children }) => {
 
         <Grid item xs={9}>
           {children}
+          
         </Grid>
       </Grid>
     </>

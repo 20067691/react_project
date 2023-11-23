@@ -15,7 +15,7 @@ import img from '../../images/film-poster-placeholder.png'
 
 const TopRatedMovieCard = ({ topRatedMovie, action }) => {
   return (
-    <Card sx={{ display: 'flex', marginBottom: 2, marginLeft: 2, width: '100%' }}>
+    <Card sx={{ display: 'flex', marginBottom: 2, marginLeft: 2, width: '90%' }}>
       {/* Box for the poster */}
       <Box sx={{ width: 200, minWidth: 200, maxHeight: 400 }}>
         <CardMedia
