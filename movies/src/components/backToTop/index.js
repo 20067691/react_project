@@ -17,8 +17,10 @@ function ScrollToTopButton() {
       padding: '8px', 
       backgroundColor: 'red', 
       color: 'white', 
+      
     }}
     onClick={handleClick}
+    
   >
       <ArrowCircleUpIcon/>
     </IconButton>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { getMovies } from "../api/tmdb-api";
+import { getMovies, getNowPlaying } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 import ScrollToTopButton from '../components/backToTop';
 import { Pagination } from '@mui/material';
+import TopRatedMovieCard from '../components/topRatedMovieCard';
 
 
 
@@ -13,19 +14,27 @@ import { Pagination } from '@mui/material';
 const HomePage = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const {  data, error, isLoading, isError, refetch }  = useQuery
-  (['discover', { page: currentPage }], getMovies)
+  (['discover', { page: currentPage }], getMovies);
+  const {data: releasedMovie , error: releasedError, isLoading: releasedLoading, isError: releasedIsError} = useQuery
+  (['released-movies'], getNowPlaying);
   
   
   
 
-  if (isLoading) {
+  if (isLoading || releasedLoading) {
     return <Spinner />
   }
 
-  if (isError) {
+  if (isError || releasedIsError) {
     return <h1>{error.message }</h1>
   }  
+
+
   const movies = data.results;
+
+  // Randomly select an index between 0 and 19 (inclusive)
+  const randomIndex = Math.floor(Math.random() * 20);
+  const newMovie = releasedMovie?.results[randomIndex];
 
   
   const handlePageChange = (event, page) => {
@@ -40,11 +49,12 @@ const HomePage = (props) => {
   localStorage.setItem('favorites', JSON.stringify(favorites)) 
 
   console.log("search ids",getMovies)
+  console.log("newM", getNowPlaying)
 
   return (
     <>
-
-      
+      <h1 style={{ marginLeft: '20px' }}>In Theatres: </h1>
+      <TopRatedMovieCard topRatedMovie={newMovie} />
     <PageTemplate
       title="Discover Movies"
       movies={movies}
