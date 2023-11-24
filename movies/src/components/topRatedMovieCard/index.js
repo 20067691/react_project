@@ -16,21 +16,21 @@ import img from '../../images/film-poster-placeholder.png'
 const TopRatedMovieCard = ({ topRatedMovie, action }) => {
   return (
     <Card sx={{ display: 'flex', marginBottom: 2, marginLeft: 2, width: '90%' }}>
-      {/* Box for the poster */}
+      
       <Box sx={{ width: 200, minWidth: 200, maxHeight: 400 }}>
         <CardMedia
           component="img"
           image={
             topRatedMovie.poster_path
               ? `https://image.tmdb.org/t/p/w500/${topRatedMovie.poster_path}`
-              : img // Replace with a fallback image URL or handle as needed
+              : img 
           }
           alt={topRatedMovie.title}
           sx={{ width: '90%', height: '100%' }}
         />
       </Box>
 
-      {/* Box for the rest of the information */}
+      
       <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
         <CardContent>
           <CardHeader

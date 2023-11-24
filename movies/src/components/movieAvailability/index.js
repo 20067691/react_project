@@ -34,8 +34,6 @@ const MovieAvailability = ({ movieId }) => {
     return <p>No availability data found for Ireland.</p>;
   }
 
-  console.log("ava",availabilityData)
-  console.log(irelandData)
 
   return (
     <div>

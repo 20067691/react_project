@@ -18,6 +18,7 @@ Name: Dean Sinnott
 ## Setup requirements.
 
 [ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
++ Install npm.
 
 ## API endpoints.
 
