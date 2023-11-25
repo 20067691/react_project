@@ -103,20 +103,20 @@ const FilterMoviesCard = (props) => {
       <CardMedia
         component="img"
         height="200"
-        image={img}  // Replace with the URL of your image
+        image={img}  
         alt="Filter"
       />
       <Box sx={{ display: 'flex', alignItems: 'center', paddingLeft: '10px' }}>
         <FormControl sx={{ ...formControl, minWidth: 120, marginRight: '10px' }}>
-          <InputLabel id="sort-label">Sort</InputLabel>
+          <InputLabel id="sort-label">Vote Average</InputLabel>
           <Select
             labelId="sort-label"
             id="sort-select"
             value={sortOption}
             onChange={(e) => handleChange(e, 'sort', e.target.value)}
           >
-            <MenuItem value="desc">Descending</MenuItem>
-            <MenuItem value="asc">Ascending</MenuItem>
+            <MenuItem value="desc">High-Low </MenuItem>
+            <MenuItem value="asc">Low-High</MenuItem>
           </Select>
         </FormControl>
       </Box>
