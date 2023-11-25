@@ -5,6 +5,7 @@ import AddToWatchlistIcon from "../components/cardIcons/addToWatchList";
 import Spinner from "../components/spinner";
 import { useQuery } from "react-query";
 import { Pagination } from "@mui/material";
+import ScrollToTopButton from "../components/backToTop";
 
 
 const UpcomingMoviesPage = (props) => {
@@ -41,7 +42,10 @@ const UpcomingMoviesPage = (props) => {
         return <AddToWatchlistIcon movie={movie} />
       }}
     />
+
+<ScrollToTopButton/>
     </>
+    
   
   );
 };

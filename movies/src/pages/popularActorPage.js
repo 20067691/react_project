@@ -4,6 +4,7 @@ import Spinner from '../components/spinner';
 import { getPopularPeople } from '../api/tmdb-api';
 import ActorList from '../components/actorList';
 import { Pagination } from '@mui/material';
+import ScrollToTopButton from '../components/backToTop';
 
 const PopularActorPage = (action) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,6 +37,7 @@ const PopularActorPage = (action) => {
       />
       <h1>Popular Actors</h1>
       <ActorList actors={popularPeople} />
+      <ScrollToTopButton/>
     </div>
   );
 };

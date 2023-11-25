@@ -4,16 +4,20 @@ Name: Dean Sinnott
 
 ## Overview.
 
-[A brief statement on the content of this repository.]
+Movie Fan app, everything you need to know about movies. This app has extensive linking between pages showing movie lists, upcoming, people involved in production, favourites and watchlist. Using React javascript libraries, running in a Node.js environment. The TMDB API provides sample data to display the apps functionality.  
+
 
 ### Features.
-[ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
+ __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
  
-+ Feature 1
-+ Feature 2
-+ Feature 3
-+ etc
-+ etc
++ Vote avgerage sort - added a new sorting method for movies in the filter movies card. User may sort from high to low and low to high.
++ In theatres movie - a random movie is displayed on the top of the home page that is currently in theatres.
++ Paginanation - the app can now  transverse and display  multipel pages of an api call.
++ Auto scroll to top button - scolls to the top of the current displayed page when clicked. 
++ Dark mode - user has the chose of a light theme and dark them for the app. Controlled from a switch at the top of the page. 
++ Movie watchlist page - User can now add they wish to watch from the upcoming movies page. 
+
+
 
 ## Setup requirements.
 
