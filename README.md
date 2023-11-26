@@ -4,7 +4,7 @@ Name: Dean Sinnott
 
 ## Overview.
 
-Movie Fan app, everything you need to know about movies. This app has extensive linking between pages showing movie lists, upcoming, people involved in production, favourites and watchlist. Using React javascript libraries, running in a Node.js environment. The TMDB API provides sample data to display the apps functionality.  
+Movie Fan app, everything you need to know about movies. This app has extensive linking between pages showing movie lists, upcoming movies, people involved in production, favourites and watchlist. Using React javascript libraries, running in a Node.js environment. The TMDB API provides sample data to display the apps functionality.  
 
 
 ### Features.
@@ -57,6 +57,8 @@ Movie Fan app, everything you need to know about movies. This app has extensive 
 Itemize the technologies/techniques you researched independently and adopted in your project, 
 i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these 
 (we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
-+ Pagination 
-+ Dark mode 
-+ null safe operator
++ Pagination (homepage.js)
++ Dark mode  (movies/index.js)
++ null safe operator (compoentns/movieAvailability/index.js)
++ auto scroll (components/backToTop/index.js) 
++ refetch (homepage.js)
