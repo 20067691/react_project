@@ -54,11 +54,8 @@ Movie Fan app, everything you need to know about movies. This app has extensive 
 
 ## Independent learning (If relevant).
 
-Itemize the technologies/techniques you researched independently and adopted in your project, 
-i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these 
-(we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
-+ Pagination (homepage.js)
-+ Dark mode  (movies/index.js)
-+ null safe operator (compoentns/movieAvailability/index.js)
-+ auto scroll (components/backToTop/index.js) 
-+ refetch (homepage.js)
++ Pagination (homepage.js) https://mui.com/material-ui/react-pagination/#basic-pagination https://tanstack.com/query/v3/docs/react/reference/useQuery
++ Dark mode  (movies/index.js) https://semaphoreci.com/blog/dark-mode-reactjs-material-ui#:~:text=To%20toggle%20between%20the%20light,it%20in%20the%20App%20component  https://mui.com/material-ui/customization/dark-mode/
++ null safe operator (compoentns/movieAvailability/index.js) https://php.watch/versions/8.0/null-safe-operator#:~:text=Null%2Dsafe%20operator%20is%20a,null%20%2C%20without%20causing%20any%20errors.
++ auto scroll (components/backToTop/index.js) https://medium.com/@glasshost/scroll-to-the-top-of-the-page-in-react-js-85a891158736
++ refetch (homepage.js) https://builtin.com/software-engineering-perspectives/use-query-react https://tanstack.com/query/v3/docs/react/reference/useQuery

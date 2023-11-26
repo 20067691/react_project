@@ -45,7 +45,7 @@ const FilterMoviesCard = (props) => {
     e.preventDefault();
 
     if (type === 'sort') {
-      setSortOption(value); // Update the sort option
+      setSortOption(value); 
       props.onUserInput(type, value);
     } else {
       props.onUserInput(type, value);

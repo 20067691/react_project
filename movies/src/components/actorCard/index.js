@@ -23,7 +23,7 @@ const ActorCard = ({ actor, action }) => {
             <Typography variant="h6" component="div">
               {`Best known for: ${actor.known_for[0].title || actor.known_for[0].name }`}
             </Typography>
-            {/* You can add additional information about the actor here */}
+            
           </CardContent>
           <CardActions disableSpacing>
         

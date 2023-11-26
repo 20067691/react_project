@@ -12,22 +12,22 @@ const MovieAvailability = ({ movieId }) => {
   );
 
 
-  // Check if the data is still loading
+  
   if (isLoading) {
     return <Spinner />;
   }
 
-  // Check for errors in fetching the data
+  
   if (isError) {
     return <p>Error loading movie availability: {error.message}</p>;
   }
 
-  // Check if the data is present
+  
   if (!availabilityData || !availabilityData.results) {
     return <p>No availability data found for this movie.</p>;
   }
 
-    // Accessing data for Ireland (you can change the country code as needed)
+    // Accessing data for Ireland 
     const irelandData = availabilityData.results.IE;
 
   if (!irelandData) {
